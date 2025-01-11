@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,23 +10,19 @@ namespace Project_Euler_33
     {
         static void Main(string[] args)
         {
-            float[] Digit1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            float[] Digit2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            float[] Digit3 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            float[] Digit4 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             double Fraction = 1;
-            for (int i = 0; i < Digit1.Length; i++)
+            for (float i = 1; i < 10; i++)
             {
-                for (int j = 0; j < Digit2.Length; j++)
+                for (float j = 1; j < 10; j++)
                 {
-                    for (int k = 0; k < Digit3.Length; k++)
+                    for (float k = 0; k < 10; k++)
                     {
-                        for (int l = 0; l < Digit4.Length; l++)
+                        for (float l = 0; l < 10; l++)
                         {
-                            if (CancellingFractions(Digit1[i], Digit2[j], Digit3[k], Digit4[l]) == true)
+                            if (CancellingFractions(i, j, k, l) == true)
                             {
-                                double Temp = Convert.ToDouble(String.Concat(Digit1[i], Digit2[j]));
-                                Temp /= Convert.ToDouble(String.Concat(Digit3[k], Digit4[l]));
+                                double Temp = Convert.ToDouble(String.Concat(i, j));
+                                Temp /= Convert.ToDouble(String.Concat(k, l));
                                 if (Temp < 1)
                                 {
                                     Fraction *= Temp;
